@@ -61,6 +61,9 @@
 			      <li class="nav-item">
 			        <a class="nav-link" href="#" data-scroll-nav="1">About</a>
 			      </li>
+				  <li class="nav-item">
+			        <a class="nav-link" href="#" data-scroll-nav="2">Technicality</a>
+			      </li>
 			    </ul>
 			  </div>
 			</div>
@@ -119,6 +122,104 @@
     	</section>
     	<!-- End About ====
     	======================================= -->
+
+		<section class="resume bg-img" data-overlay-dark="8" data-scroll-index="1">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-lg-3 col-sm-6" style="padding-right: 20px;">
+    					<div class="item mb-md50">
+    						<span class="icon fas fa-pencil-alt"></span><br>
+    						<h5 class="title title-left">Context</h5>
+    						<ul>
+    							<li>
+    								<h6>Connecticut College</h6>
+									<p>COM 407</p>
+									<p>Professor Gary Parker</p>
+    							</li>
+    						</ul>
+    					</div>
+    				</div>
+    				<div class="col-lg-3 col-sm-6" style="padding-left: 70px;">
+    					<div class="item mb-md50">
+    						<span class="icon fas fa-briefcase"></span><br>
+    						<h5 class="title title-left">About Us</h5>
+    						<ul>
+    							<li>
+    								<h6>Bill Tran</h6>
+    								<p>Banana Enthusiast</p>
+    							</li>
+    							<li>
+    								<h6>William Mears</h6>
+    								<p>Sandwich Lover</p>
+    							</li>
+    							<li>
+    								<h6>Tyler Maguire</h6>
+    								<p>Cracker Aficionado</p>
+								</li>
+    						</ul>
+    					</div>
+    				</div>
+					<div class="col-sm-6" style="padding-left: 10px;">
+    					<div class="item mb-md50">
+    						<p style="padding-top: 125px;"></p>
+    						<ul>
+    							<li>
+    								<h6>I can't beat Cam in Mario Kart, but my bot might.</h6>
+									<br>
+    							</li>
+    							<li>
+    								<h6>Will's stuff</h6>
+									<br>
+    							</li>
+    							<li>
+    								<h6>Tyler's stuff</h6>
+									<br>
+								</li>
+    						</ul>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+
+    	<section class="portfolio section-padding" data-scroll-index="2">
+			<div class="container">
+				<div class="row">
+    				<div class="section-head full-width">
+    					<h4 class="title">Technicality <span class="icon fas fa-code"></span></h4>
+    				</div>
+    			</div>
+
+				<div class="row justify-content-center">
+					<div class="col-md-7 items" style="margin: auto; width: 50%;">
+						<div class="item-img">
+							<img src="resources/img/map.png" alt="image" style="border: 3px solid #C49B66;">
+							<div class="item-img-overlay text-center valign">
+								<div class="overlay-info vertical-center full-width">
+										<h5>Our Map</h5>
+								</div>
+							</div>
+						</div>
+						<br>
+						<br>
+						<div class="content">
+							<h6 class="title title-left">Neural Network + Genetic Algorithm</h6>
+							<p>We use a <b>neural network</b> with <b>18 inputs</b> and <b>3 outputs</b> to controll the X-Pilot agent. The inputs includes distances to walls in all directions, velocity of the agent, distance and angle of the most dangerous bullet, ..., while the outputs include thrust (True or False), shoot (True or False), and turn (an angle from -20 to 20 degree). All inputs are normalized to between -1 and 1.</p>
+							<br>
+							<p>At the moment, there are no hidden layers, thus the number of weights in the neural network is 54. These weights are learned using Genetic Algorithm, with a population of 100 chromosomes, each with 324 genes. Each weight in the neural network is represented by 6 genes, thus 54 weights fit in a chromosome of 324 genes.</p>
+							<br>
+							<p>We use a standard Genetic Algorithm where each chromosome in the population is tested and assigned a fitness, which is calculated by how long the agent survives plus a bonus if the agent kills the opponent. The population then are selected using roulette wheel method and evolved using two point crossover and mutation with a chance of 0.1. Each chromosome is trained against an aggressive and accurate opponent provided by Nikesh and Cam (thank you!).</p>
+						</div>
+						<br>
+						<br>
+						<div class="content">
+							<h6 class="title title-left">Fuzzy Logic + Genetic Algorithm</h6>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</section>
 
     	<!-- =====================================
     	==== Start Footer -->
