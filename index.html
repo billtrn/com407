@@ -64,6 +64,12 @@
 				  <li class="nav-item">
 			        <a class="nav-link" href="#" data-scroll-nav="2">Technicality</a>
 			      </li>
+				  <li class="nav-item">
+			        <a class="nav-link" href="#" data-scroll-nav="3">Experiments</a>
+			      </li>
+				  <li class="nav-item">
+			        <a class="nav-link" href="#" data-scroll-nav="4">Results</a>
+			      </li>
 			    </ul>
 			  </div>
 			</div>
@@ -114,7 +120,7 @@
 							<h4 class="title title-left">Our Plan <span class="icon fas fa-robot"></span></h4>
     						<p><span>Abstract:</span> Compare the performance of X-Pilot controllers trained with <span>Artificial Neural Network</span> and with <span>Fuzzy Logic</span> when both use <span>Genetic Algorithm</span> to learn their parameters.</p>
 							<p>We are going to evolve two controllers in X-Pilot, one with Neural Network and the other with Fuzzy Logic. For both approaches, we will be using Genetic Algorithm in the learning process. For the controller with the Neural Network, we will use Genetic Algorithm to learn the weights associated with the network. On the other hand, for the Fuzzy controller, Genetic Algorithm will help us learn the thresholds for the Fuzzy sets.</p>
-							<p>We plan on having the two controllers compete individually against the built-in robot Sel to evaluate the performance. In addition, we will also have a competition between the neural network and the fuzzy controllers for head-to-head results. </p>
+							<p>We plan on having the two controllers compete individually against a well-trained aggressive bot made by Cam and Nikesh to evaluate the performance. In addition, we will also have a competition between the neural network and the fuzzy controllers for head-to-head results. </p>
     					</div>
     				</div>
     			</div>
@@ -204,16 +210,24 @@
 						<br>
 						<div class="content">
 							<h6 class="title title-left">Neural Network + Genetic Algorithm</h6>
-							<p>We use a <b>neural network</b> with <b>18 inputs</b> and <b>3 outputs</b> to controll the X-Pilot agent. The inputs includes distances to walls in all directions, velocity of the agent, distance and angle of the most dangerous bullet, ..., while the outputs include thrust (True or False), shoot (True or False), and turn (an angle from -20 to 20 degree). All inputs are normalized to between -1 and 1.</p>
+							<p>We use a <b>neural network</b> with <b>18 inputs</b> and <b>3 outputs</b> to control the X-Pilot agent. The inputs includes distances to walls in all directions, velocity of the agent, distance and angle of the most dangerous bullet, ..., while the outputs include thrust (True or False), shoot (True or False), and turn (an angle from -20 to 20 degree). All inputs are normalized to between -1 and 1.</p>
 							<br>
 							<p>At the moment, there are no hidden layers, thus the number of weights in the neural network is 54. These weights are learned using Genetic Algorithm, with a population of 100 chromosomes, each with 324 genes. Each weight in the neural network is represented by 6 genes, thus 54 weights fit in a chromosome of 324 genes.</p>
 							<br>
 							<p>We use a standard Genetic Algorithm where each chromosome in the population is tested and assigned a fitness, which is calculated by how long the agent survives plus a bonus if the agent kills the opponent. The population then are selected using roulette wheel method and evolved using two point crossover and mutation with a chance of 0.1. Each chromosome is trained against an aggressive and accurate opponent provided by Nikesh and Cam (thank you!).</p>
+							<br>
+							<iframe id="ytplayer" type="text/html" width="640" height="450"
+							src="https://www.youtube.com/embed/dQxErMYztoI?autoplay=0&origin=http://youtube.com"
+							frameborder="0">
+							</iframe>
 						</div>
 						<br>
 						<br>
 						<div class="content">
 							<h6 class="title title-left">Fuzzy Logic + Genetic Algorithm</h6>
+							<p>Our Fuzzy/GA bot uses a genetic algorithm to evolve both the bots production system and the membership functions for the Fuzzy Logic. We use 311 bit chromosomes, translate portions of the chromosome from binary to base ten, and allow each portion to represent a certain part of our code.  We have four membership functions, which use 146 bits of the chromosome. Each membership function has a portion of the chromosome to calculate: where the degree of membership (DOM) is 1.0 for low, what the slope of the low DOM portion is as it decreases to 0, where the medium DOM starts, the slope for DOM as it increases and decreases, where the high DOM starts, and what the slope of the high DOM is as it increases to 1.</p>
+							<br>
+							<p>Our Fuzzy bot uses a genetic algorithm to evolve both the bots production system and the membership functions for the Fuzzy Logic. We use 311 bit chromosomes, translate portions of the chromosome from binary to base ten, and allow each portion to represent a certain part of our code.  We have four membership functions, which use 146 bits of the chromosome. Each membership function has a portion of the chromosome to calculate: where the degree of membership (DOM) is 1.0 for low, what the slope of the low DOM portion is as it decreases to 0, where the medium DOM starts, the slope for DOM as it increases and decreases, where the high DOM starts, and what the slope of the high DOM is as it increases to 1.</p>
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -221,6 +235,41 @@
 			</div>
 		</section>
 
+		<section class="portfolio section-padding" data-overlay-dark="8" data-scroll-index="3">
+			<div class="container">
+				<div class="row">
+    				<div class="section-head full-width">
+    					<h4 class="title">Experiments <span class="icon fas fa-flask"></span></h4>
+    				</div>
+    			</div>
+
+				<div class="row justify-content-center">
+					<div class="col-md-7 items" style="margin: auto; width: 50%;">
+						<div class="content">
+							<h6 class="title title-left">Neural Network + Genetic Algorithm</h6>
+							<p>We started off by training the agent with 18 parameters with the fitness increasing for every frame it survives by 1. After many generations, the chromosomes were converging on the same strategy of hide and seek. The enemy we trained against was an aggressive agent that would hunt enemies by flying around the map until enemies appeared on screen and accurately aim and kill its enemy. Since our agent’s (Nettie’s) fitness was based on the number of frames it survived, it would hide in the corner of the map and spin in circles until the enemy appeared nearby. The most fit chromosomes learned to not move at all, so that it would not be found and killed.</p>
+							<br>
+							<p>To counter this we added in a -1 fitness to all frames with a speed equivalent to 0. This ensured that the agent would only have a fitness above 0 if it moved throughout its lifetime. The unintended consequences of this led to Nettie learning to shoot instead of thrusting. Every time an agent shoots, it accelerates backwards slowly. Instead of learning to aim away from walls and thrust to avoid walls, Nettie learned to aim at the closest wall and shoot at it to avoid moving closer to the wall without thrusting. We tested this model with 256 chromosomes in one population and 512 chromosomes in another population.</p>
+							<br>
+							<p>Once again, we decided to attempt to change the behavior to learn to thrust. Our last test altered the fitness by dividing the chromosome’s fitness in half if it did not thrust throughout its lifetime in addition to the previous fitness changes. We created a global variable set to ‘True’ or ‘False’ to check if the agent thrusted during its lifetime. This resulted in Nettie continuing the previous strategy of shooting to move each frame until the enemy was on the screen. Once the enemy was on the screen, it would thrust very powerfully into the wall directly ahead.</p>
+						</div>
+						<br>
+						<br>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="portfolio section-padding" data-scroll-index="4">
+			<div class="container">
+				<div class="row">
+    				<div class="section-head full-width">
+    					<h4 class="title">Results <span class="icon fas fa-poll"></span></h4>
+    				</div>
+    			</div>
+			</div>
+		</section>
     	<!-- =====================================
     	==== Start Footer -->
     	<footer class="footer">
