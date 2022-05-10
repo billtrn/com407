@@ -237,6 +237,11 @@
 							<p>Our Fuzzy/GA bot uses a genetic algorithm to evolve both the bots production system and the membership functions for the Fuzzy Logic. We use 311 bit chromosomes, translate portions of the chromosome from binary to base ten, and allow each portion to represent a certain part of our code.  We have four membership functions, which use 146 bits of the chromosome. Each membership function has a portion of the chromosome to calculate: where the degree of membership (DOM) is 1.0 for low, what the slope of the low DOM portion is as it decreases to 0, where the medium DOM starts, the slope for DOM as it increases and decreases, where the high DOM starts, and what the slope of the high DOM is as it increases to 1.</p>
 							<br>
 							<p>Our Fuzzy bot uses a genetic algorithm to evolve both the bots production system and the membership functions for the Fuzzy Logic. We use 311 bit chromosomes, translate portions of the chromosome from binary to base ten, and allow each portion to represent a certain part of our code.  We have four membership functions, which use 146 bits of the chromosome. Each membership function has a portion of the chromosome to calculate: where the degree of membership (DOM) is 1.0 for low, what the slope of the low DOM portion is as it decreases to 0, where the medium DOM starts, the slope for DOM as it increases and decreases, where the high DOM starts, and what the slope of the high DOM is as it increases to 1.</p>
+							<br>
+							<iframe id="ytplayer" type="text/html" width="640" height="450"
+							src="https://www.youtube.com/embed/rDW7TWh2okA?autoplay=0&origin=http://youtube.com"
+							frameborder="0">
+							</iframe>
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -264,6 +269,14 @@
 						</div>
 						<br>
 						<br>
+						<div class="content">
+							<h6 class="title title-left">Fuzzy Logic + Genetic Algorithm</h6>
+							<p>Originally, we were only going to evolve our degree of membership functions and choose production system values ourselves, but decided that it would most likely have led to NN bot performing far better than Fuzzy. Having a production system created without the help of a genetic algorithm would have caused the Fuzzy bot to have an external factor affecting its performance (our decision making on deciding numbers for a production system) and would have made for an unfair comparison between NN bot and Fuzzy bot.</p>
+							<br>
+							<p>We originally had 146 genes in each chromosome, though after updating the code to have an evolving production system we ended up with 311. We took our fuzzy system from a previous code and altered the wall danger for higher performance. We had also originally wanted to reward a smaller amount for kills, but doubled this amount to encourage a more aggressive bot. For the first few generations, our bot was frantic. It performed decently with aiming and shooting, but would thrust out of control and into walls. After a few generations, it became noticeably more in control. The bot would thrust towards a wall, turn until its back end was facing the wall, and thrust away.</p>
+							<br>
+							<p>After 287 generations, every chromosome was identical. The bot had good aiming, shooting, and wall avoidance. We altered the code to use only the best chromosome and played it against NN bot.</p>
+						</div>
 					</div>
 					<div class="clearfix"></div>
 				</div>
