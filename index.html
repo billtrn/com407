@@ -219,7 +219,7 @@
 						<br>
 						<div class="content">
 							<h6 class="title title-left">Neural Network + Genetic Algorithm</h6>
-							<p>We use a <b>neural network</b> with <b>18 inputs</b> and <b>3 outputs</b> to control the X-Pilot agent. The inputs includes distances to walls in all directions, velocity of the agent, distance and angle of the most dangerous bullet, ..., while the outputs include thrust (True or False), shoot (True or False), and turn (an angle from -20 to 20 degree). All inputs are normalized to between -1 and 1.</p>
+							<p>We use a we used a perceptron for the <b>neural network</b> with <b>18 inputs</b> and <b>3 outputs</b> to control the X-Pilot agent. The inputs includes distances to walls in all directions, velocity of the agent, distance and angle of the most dangerous bullet, ..., while the outputs include thrust (True or False), shoot (True or False), and turn (an angle from -20 to 20 degree). All inputs are normalized to between -1 and 1.</p>
 							<br>
 							<p>At the moment, there are no hidden layers, thus the number of weights in the neural network is 54. These weights are learned using Genetic Algorithm, with a population of 100 chromosomes, each with 324 genes. Each weight in the neural network is represented by 6 genes, thus 54 weights fit in a chromosome of 324 genes.</p>
 							<br>
@@ -295,6 +295,29 @@
 							<a href="https://github.com/billtrn/xpilot-agents" front="View Code" back="&#xf09b;" target="_blank"></a>
 						</span>
     				</div>
+					<div class="row justify-content-center">
+						<div class="col-md-7 items" style="margin: auto; width: 50%;">
+							<div class="content">
+								<h6 class="title title-left">Neural Network + Genetic Algorithm</h6>
+								<p>The agent Nettie that learned the weights of a neural network with a genetic algorithm did not turn out as successful as we hoped for. We attempted to reduce the number of parameters compared to the experiment from Professor Parker in hopes of simplifying the problem. While this may not be the sole reason for the agent's performance, it is a potential factor for Nettie's performance.</p>
+								<br>
+								<p>Our agent, Nettie, successfully learned some unique skills and strategies throughout the training process. One strategy was to navigate the map by shooting to propel itself instead of thrusting. Since we were penalizing the agent if it did not move in the frame, it learned to shoot to move. This strategy could have also formed because we strongly rewarded the Nettie for every kill the agent got. Therefore, Nettie would continue shooting in hopes a stray bullet would hit the enemy.</p>
+								<br>
+								<p>Lastly, the enemy agent we trained against was an extremely aggressive agent that hunted enemies, locked onto them, and killed them. This may have been a gung-ho approach because the enemy was so skilled to start with. Looking back, it may have been better to train Nettie to learn wall avoidance and/or start with an easier opponent before throwing the agent into a combative game against a much more skilled opponent.</p>
+							</div>
+							<br>
+							<br>
+							<div class="content">
+								<h6 class="title title-left">Fuzzy Logic + Genetic Algorithm</h6></div>
+							<br>
+							<br>
+							<div class="content">
+								<h6 class="title title-left">Comparison of the Final Evolutions</h6>
+								<p>Overall, both the neural network genetic algorithm (Nettie) agent and the fuzzy genetic algorithm (Fuzzie) turned out to be successful in that they both learned some skills and strategies. Nettie continued converging on chromosomes that would navigate the map through shooting instead of thrusting. While this was not the ideal method to move around, there was learning of the neural network weights with a genetic algorithm. As mentioned above, there are numerous factors that could have led to this outcome. On the other hand, Fuzzie had outstanding results. After the first round of testing, Fuzzie learned wall avoidance on the Simple map very well. With some adjustments to the fitness, Fuzzie was also able to learn to shoot accurately in addition to the wall avoidance. Fuzzie turned out to be a much stronger opponent than Nettie against the enemy agent we used.</p>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
     			</div>
 			</div>
 		</section>
